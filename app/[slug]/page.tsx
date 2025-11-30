@@ -183,7 +183,7 @@ export default function ItemDetailPage({ params }: { params: { slug: string } })
         <article className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden border border-gray-200 dark:border-gray-700">
           {/* Hero Image */}
           {item.imageUrl && (
-            <div className="relative w-full h-96 overflow-hidden">
+            <div className="relative w-full h-48 sm:h-64 md:h-80 lg:h-96 overflow-hidden">
               <ImageWithFallback
                 src={item.imageUrl}
                 alt={`${item.name} featured image`}
@@ -194,16 +194,16 @@ export default function ItemDetailPage({ params }: { params: { slug: string } })
             </div>
           )}
           
-          <div className="p-8">
+          <div className="p-4 sm:p-6 md:p-8">
             {/* Header Section */}
             <div className="mb-6">
               <div className="flex items-start justify-between mb-4">
                 <div className="flex-1">
-                  <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-3">
+                  <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-3">
                     {item.name}
                   </h1>
-                  <div className="flex items-center gap-4 mb-3">
-                    <span className="inline-block px-4 py-2 text-sm font-medium bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full">
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 mb-3">
+                    <span className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full w-fit">
                       {item.category}
                     </span>
                     {renderStars(item.rating)}
@@ -225,18 +225,18 @@ export default function ItemDetailPage({ params }: { params: { slug: string } })
             </div>
 
             {/* Description Section */}
-            <div className="mb-8">
-              <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
+            <div className="mb-6 sm:mb-8">
+              <h2 className="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4">
                 Description
               </h2>
-              <p className="text-gray-700 dark:text-gray-300 text-lg leading-relaxed">
+              <p className="text-gray-700 dark:text-gray-300 text-base sm:text-lg leading-relaxed">
                 {item.description}
               </p>
             </div>
 
             {/* Dataset-Specific Fields */}
-            <div className="mb-8">
-              <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
+            <div className="mb-6 sm:mb-8">
+              <h2 className="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4">
                 Details
               </h2>
               {renderDatasetSpecificFields(item)}
@@ -260,11 +260,11 @@ export default function ItemDetailPage({ params }: { params: { slug: string } })
 
         {/* Related Items Section */}
         {relatedItems.length > 0 && (
-          <section className="mt-12">
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+          <section className="mt-8 sm:mt-12">
+            <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6">
               Related Items in {item.category}
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
               {relatedItems.map((relatedItem) => (
                 <Link
                   key={relatedItem.id}

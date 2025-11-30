@@ -55,7 +55,7 @@ export function ItemCard({ item }: ItemCardProps) {
       <article className="h-full bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden border border-gray-200 dark:border-gray-700">
         {/* Image */}
         {item.imageUrl && (
-          <div className="relative w-full h-48 overflow-hidden">
+          <div className="relative w-full h-40 sm:h-48 overflow-hidden">
             <ImageWithFallback
               src={item.imageUrl}
               alt={`${item.name} preview image`}
@@ -67,13 +67,13 @@ export function ItemCard({ item }: ItemCardProps) {
         )}
         
         {/* Card Content */}
-        <div className="p-6">
+        <div className="p-4 sm:p-6">
           {/* Header with name and category */}
           <div className="mb-3">
-            <h3 className="text-xl font-semibold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors mb-2">
+            <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors mb-2 line-clamp-2">
               {item.name}
             </h3>
-            <span className="inline-block px-3 py-1 text-xs font-medium bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full">
+            <span className="inline-block px-2.5 sm:px-3 py-1 text-xs font-medium bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full">
               {item.category}
             </span>
           </div>

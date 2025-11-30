@@ -99,11 +99,11 @@ export default function CategoryPageClient({ category }: CategoryPageClientProps
         </nav>
 
         {/* Page Header */}
-        <header className="mb-8">
-          <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-2">
+        <header className="mb-6 sm:mb-8">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-2">
             {originalCategory}
           </h1>
-          <p className="text-gray-600 dark:text-gray-400">
+          <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400">
             {categoryItemCount} {categoryItemCount === 1 ? 'item' : 'items'} in this category
           </p>
         </header>
@@ -133,7 +133,7 @@ export default function CategoryPageClient({ category }: CategoryPageClientProps
 
         {/* Items Grid */}
         {filteredItems.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" role="list">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6" role="list">
             {filteredItems.map((item) => (
               <div key={item.id} role="listitem">
                 <ItemCard item={item} />
